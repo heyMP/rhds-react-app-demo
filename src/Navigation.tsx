@@ -17,7 +17,7 @@ function Navigation() {
                     pfe-navigation__logo-image
                     pfe-navigation__logo-image--screen
                     pfe-navigation__logo-image--small"
-                  src="assets/redhat--reverse.svg"
+                  src="https://static.redhat.com/libs/redhat/brand-assets/2/corp/logo--on-dark.svg"
                   width="400" alt="Redhat" />
                 <img
                   class="
