@@ -1,12 +1,13 @@
-import '@rhds/elements/rh-tooltip/rh-tooltip.js';
+// @ts-nocheck
+import Navigation from './Navigation';
 import '@rhds/elements/rh-footer/rh-footer.js';
+import '@rhds/elements/rh-footer/rh-footer-lightdom.css';
 import '@rhds/elements/rh-cta/rh-cta.js';
 import './App.css';
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'rh-tooltip': any;
       'rh-footer': any;
       'rh-global-footer': any;
       'rh-footer-social-link': any;
@@ -20,14 +21,7 @@ declare global {
 function App() {
   return (
     <>
-      <rh-tooltip position="top">
-        <div>
-          ?
-        </div>
-        <div slot="content">
-          cool stuff!
-        </div>
-      </rh-tooltip>
+      <Navigation />
       <rh-footer data-analytics-region="page-footer">
         <a slot="logo" href="https://redhat.com/en" data-analytics-category="Footer" data-analytics-text="Logo">
           <img alt="Red Hat logo" src="https://static.redhat.com/libs/redhat/brand-assets/2/corp/logo--on-dark.svg" loading="lazy" />
@@ -79,7 +73,7 @@ function App() {
           <rh-cta><a href="https://www.redhat.com/en/email-preferences?newsletter=RH-Shares&intcmp=7016000000154xCAAQ" data-analytics-category="Footer|About Red Hat" data-analytics-text="Sign up now">Sign up now</a></rh-cta>
         </rh-footer-block>
 
-        <rh-global-footer slot="global">
+        <rh-footer-universal slot="universal">
           <h3 slot="links-primary" data-analytics-text="Red Hat legal and privacy links" hidden>Red Hat legal and privacy links</h3>
           <ul slot="links-primary" data-analytics-region="page-footer-bottom-primary">
             <li><a href="https://redhat.com/en/about/company" data-analytics-category="Footer|Corporate" data-analytics-text="About Red Hat">About Red Hat</a></li>
@@ -88,7 +82,7 @@ function App() {
             <li><a href="https://redhat.com/en/about/office-locations" data-analytics-category="Footer|Corporate" data-analytics-text="Locations">Locations</a></li>
             <li><a href="https://redhat.com/en/contact" data-analytics-category="Footer|Corporate" data-analytics-text="Contact Red Hat">Contact Red Hat</a></li>
             <li><a href="https://redhat.com/en/blog" data-analytics-category="Footer|Corporate" data-analytics-text="Red Hat Blog">Red Hat Blog</a></li>
-            <li><a href="https://redhat.com/en/about/our-culture/diversity-equity-inclusion/statement" data-analytics-category="Footer|Corporate" data-analytics-text="Diversity equity and inclusion">Diversity, equity, and inclusion</a></li>
+            <li><a href="https://redhat.com/en/about/our-culture/diversity-equity-inclusion" data-analytics-category="Footer|Corporate" data-analytics-text="Diversity equity and inclusion">Diversity, equity, and inclusion</a></li>
             <li><a href="https://coolstuff.redhat.com/" data-analytics-category="Footer|Corporate" data-analytics-text="Cool Stuff Store">Cool Stuff Store</a></li>
             <li><a href="https://www.redhat.com/en/summit" data-analytics-category="Footer|Corporate" data-analytics-text="Red Hat Summit">Red Hat Summit</a></li>
           </ul>
@@ -98,9 +92,9 @@ function App() {
             <li><a href="https://redhat.com/en/about/privacy-policy" data-analytics-category="Footer|Red Hat legal and privacy links" data-analytics-text="Privacy statement">Privacy statement</a></li>
             <li><a href="https://redhat.com/en/about/terms-use" data-analytics-category="Footer|Red Hat legal and privacy links" data-analytics-text="Terms of use">Terms of use</a></li>
             <li><a href="https://redhat.com/en/about/all-policies-guidelines" data-analytics-category="Footer|Red Hat legal and privacy links" data-analytics-text="All policies and guidelines">All policies and guidelines</a></li>
-            <li><a className="blah" href="https://redhat.com/en/about/digital-accessibility" data-analytics-category="Footer|Red Hat legal and privacy links" data-analytics-text="Digital accessibility">Digital accessibility</a></li>
+            <li><a href="https://redhat.com/en/about/digital-accessibility" data-analytics-category="Footer|Red Hat legal and privacy links" data-analytics-text="Digital accessibility" class="active">Digital accessibility</a></li>
           </ul>
-        </rh-global-footer>
+        </rh-footer-universal>
       </rh-footer>
     </>
   );
